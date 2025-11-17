@@ -246,8 +246,8 @@ const rawMusicData: MusicPiece[] = [
     title: 'The Rite of Spring',
     youtubeId: 'EkwqPJZe8ms',
     week: 'Week 10-11-12',
-    keyPoint: 'Caused a riot at its premiere. Primal, harsh rhythms.',
-    youtubeStartTime: 210,
+    keyPoint: 'Caused riot/chaos at its premiere. Primal, harsh rhythms.',
+    youtubeStartTime: 1994,
   },
   {
     composer: 'Prokofiev',
