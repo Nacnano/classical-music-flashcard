@@ -97,68 +97,78 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
   const getSelectedSongsCount = () => selectedSongIds.size;
 
   return (
-    <div className="w-full max-w-2xl bg-slate-800/50 p-8 rounded-xl shadow-2xl animate-fade-in text-center">
-      <h2 className="text-3xl font-bold mb-4 text-amber-200">Select Weeks to Study</h2>
-      <p className="text-gray-400 mb-6">Choose the weeks you want to be quizzed on.</p>
+    <div className="w-full max-w-2xl bg-slate-800/50 p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl animate-fade-in text-center">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-amber-200">
+        Select Weeks to Study
+      </h2>
+      <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">
+        Choose the weeks you want to be quizzed on.
+      </p>
 
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 gap-3 text-left my-6 max-h-96 overflow-y-auto">
+        <div className="grid grid-cols-1 gap-2 sm:gap-3 text-left my-4 sm:my-6 max-h-[60vh] sm:max-h-96 overflow-y-auto pr-1">
           {WEEKS.map(week => {
             const songs = getSongsForWeek(week);
             const isExpanded = expandedWeek === week;
             return (
               <div key={week} className="bg-gray-900/50 rounded-lg overflow-hidden">
-                <div className="flex items-center p-3 hover:bg-gray-800 transition-colors">
+                <div className="flex items-center p-2 sm:p-3 hover:bg-gray-800 transition-colors">
                   <input
                     type="checkbox"
                     checked={selectedWeeks.includes(week)}
                     onChange={() => handleToggleWeek(week)}
-                    className="form-checkbox h-5 w-5 text-amber-500 bg-gray-700 border-gray-600 rounded focus:ring-amber-400 focus:ring-2 flex-shrink-0"
+                    className="form-checkbox h-4 w-4 sm:h-5 sm:w-5 text-amber-500 bg-gray-700 border-gray-600 rounded focus:ring-amber-400 focus:ring-2 flex-shrink-0"
                   />
                   <button
                     type="button"
                     onClick={() => toggleExpandWeek(week)}
-                    className="flex-1 flex items-center justify-between ml-3 text-left"
+                    className="flex-1 flex items-center justify-between ml-2 sm:ml-3 text-left min-w-0"
                   >
-                    <span className="text-gray-200 font-medium">{week}</span>
-                    <span className="text-xs text-gray-400 mr-2">
-                      {songs.length} {songs.length === 1 ? 'song' : 'songs'}
+                    <span className="text-sm sm:text-base text-gray-200 font-medium truncate">
+                      {week}
                     </span>
-                    <svg
-                      className={`w-5 h-5 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                    <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                      <span className="text-xs text-gray-400">
+                        {songs.length} {songs.length === 1 ? 'song' : 'songs'}
+                      </span>
+                      <svg
+                        className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
                   </button>
                 </div>
                 {isExpanded && (
-                  <div className="px-3 pb-3 pt-1 space-y-1 bg-gray-900/70">
+                  <div className="px-2 sm:px-3 pb-2 sm:pb-3 pt-1 space-y-1 bg-gray-900/70">
                     {songs.map((song, index) => {
                       const songId = getSongId(song);
                       const isSelected = selectedSongIds.has(songId);
                       return (
                         <label
                           key={index}
-                          className="flex items-center text-sm text-gray-300 pl-4 py-2 hover:bg-gray-800/50 rounded cursor-pointer transition-colors"
+                          className="flex items-start sm:items-center text-xs sm:text-sm text-gray-300 pl-2 sm:pl-4 py-1.5 sm:py-2 hover:bg-gray-800/50 rounded cursor-pointer transition-colors"
                         >
                           <input
                             type="checkbox"
                             checked={isSelected}
                             onChange={() => handleToggleSong(song)}
-                            className="form-checkbox h-4 w-4 text-amber-500 bg-gray-700 border-gray-600 rounded focus:ring-amber-400 focus:ring-2 flex-shrink-0"
+                            className="form-checkbox h-3.5 w-3.5 sm:h-4 sm:w-4 mt-0.5 sm:mt-0 text-amber-500 bg-gray-700 border-gray-600 rounded focus:ring-amber-400 focus:ring-2 flex-shrink-0"
                           />
-                          <div className="ml-3 flex-1 border-l-2 border-amber-500/30 pl-3">
-                            <span className="font-medium text-amber-300">{song.composer}</span>
+                          <div className="ml-2 sm:ml-3 flex-1 border-l-2 border-amber-500/30 pl-2 sm:pl-3 min-w-0">
+                            <span className="font-medium text-amber-300 break-words">
+                              {song.composer}
+                            </span>
                             <span className="text-gray-400"> - </span>
-                            <span className="text-gray-300">{song.title}</span>
+                            <span className="text-gray-300 break-words">{song.title}</span>
                           </div>
                         </label>
                       );
@@ -170,11 +180,21 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
           })}
         </div>
 
-        <div className="flex justify-center gap-4 my-6">
-          <Button type="button" variant="secondary" onClick={handleSelectAll}>
+        <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 my-4 sm:my-6">
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={handleSelectAll}
+            className="w-full sm:w-auto"
+          >
             Select All
           </Button>
-          <Button type="button" variant="secondary" onClick={handleDeselectAll}>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={handleDeselectAll}
+            className="w-full sm:w-auto"
+          >
             Deselect All
           </Button>
         </div>
@@ -182,7 +202,7 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
         <Button
           type="submit"
           disabled={getSelectedSongsCount() === 0}
-          className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
         >
           Start Quiz ({getSelectedSongsCount()} {getSelectedSongsCount() === 1 ? 'Song' : 'Songs'})
         </Button>

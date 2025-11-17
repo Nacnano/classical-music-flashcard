@@ -168,7 +168,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-slate-800 text-gray-200 flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-slate-800 text-gray-200 flex flex-col items-center justify-start sm:justify-center p-2 sm:p-4">
       <Header />
       <main className="w-full max-w-2xl mx-auto flex-grow flex items-center justify-center">
         {renderContent()}
