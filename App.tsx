@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { MusicPiece, GameState, Feedback } from './types';
 import { MUSIC_LIST } from './constants';
