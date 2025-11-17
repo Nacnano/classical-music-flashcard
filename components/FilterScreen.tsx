@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import Button from './Button';
 import { WEEKS, MUSIC_LIST } from '../constants';
 import type { MusicPiece } from '../types';
+import { QuizMode } from '../types';
 
 interface FilterScreenProps {
-  onStartQuiz: (selectedSongs: MusicPiece[]) => void;
+  onStartQuiz: (selectedSongs: MusicPiece[], quizMode: QuizMode) => void;
 }
 
 const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
@@ -15,6 +16,7 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
     new Set(MUSIC_LIST.map(song => `${song.composer}|${song.title}`))
   );
   const [expandedWeek, setExpandedWeek] = useState<string | null>(null);
+  const [quizMode, setQuizMode] = useState<QuizMode>(QuizMode.Write);
 
   const getSongId = (song: MusicPiece) => `${song.composer}|${song.title}`;
 
@@ -90,7 +92,7 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
     e.preventDefault();
     const selectedSongs = MUSIC_LIST.filter(song => selectedSongIds.has(getSongId(song)));
     if (selectedSongs.length > 0) {
-      onStartQuiz(selectedSongs);
+      onStartQuiz(selectedSongs, quizMode);
     }
   };
 
@@ -106,6 +108,59 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
       </p>
 
       <form onSubmit={handleSubmit}>
+        {/* Quiz Mode Selection */}
+        <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-900/50 rounded-lg">
+          <h3 className="text-sm sm:text-base font-semibold text-amber-300 mb-3">Quiz Mode:</h3>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <label className="flex-1 cursor-pointer">
+              <input
+                type="radio"
+                name="quizMode"
+                value={QuizMode.Write}
+                checked={quizMode === QuizMode.Write}
+                onChange={() => setQuizMode(QuizMode.Write)}
+                className="sr-only peer"
+              />
+              <div className="p-3 sm:p-4 border-2 border-gray-700 rounded-lg peer-checked:border-amber-500 peer-checked:bg-amber-500/10 hover:bg-gray-800/50 transition-all">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-4 h-4 rounded-full border-2 border-gray-600 peer-checked:border-amber-500 flex items-center justify-center">
+                    {quizMode === QuizMode.Write && (
+                      <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+                    )}
+                  </div>
+                  <span className="font-semibold text-gray-200 text-sm sm:text-base">
+                    Write Answer
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-400 ml-6">Type composer and title</p>
+              </div>
+            </label>
+            <label className="flex-1 cursor-pointer">
+              <input
+                type="radio"
+                name="quizMode"
+                value={QuizMode.MultipleChoice}
+                checked={quizMode === QuizMode.MultipleChoice}
+                onChange={() => setQuizMode(QuizMode.MultipleChoice)}
+                className="sr-only peer"
+              />
+              <div className="p-3 sm:p-4 border-2 border-gray-700 rounded-lg peer-checked:border-amber-500 peer-checked:bg-amber-500/10 hover:bg-gray-800/50 transition-all">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-4 h-4 rounded-full border-2 border-gray-600 peer-checked:border-amber-500 flex items-center justify-center">
+                    {quizMode === QuizMode.MultipleChoice && (
+                      <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+                    )}
+                  </div>
+                  <span className="font-semibold text-gray-200 text-sm sm:text-base">
+                    Multiple Choice
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-400 ml-6">Choose from 4 options</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 gap-2 sm:gap-3 text-left my-4 sm:my-6 max-h-[60vh] sm:max-h-96 overflow-y-auto pr-1">
           {WEEKS.map(week => {
             const songs = getSongsForWeek(week);

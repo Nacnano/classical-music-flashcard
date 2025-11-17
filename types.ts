@@ -14,6 +14,11 @@ export enum GameState {
   Finished = 'FINISHED',
 }
 
+export enum QuizMode {
+  Write = 'WRITE',
+  MultipleChoice = 'MULTIPLE_CHOICE',
+}
+
 export interface Feedback {
   isCorrect: boolean;
   correctPiece: MusicPiece;

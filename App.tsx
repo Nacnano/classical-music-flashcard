@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { MusicPiece, GameState, Feedback } from './types';
+import { MusicPiece, GameState, Feedback, QuizMode } from './types';
 import { MUSIC_LIST } from './constants';
 import Flashcard from './components/Flashcard';
 import FeedbackScreen from './components/FeedbackScreen';
@@ -51,11 +51,13 @@ const App: React.FC = () => {
   const [score, setScore] = useState(0);
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isLoading, setIsLoading] = useState(false); // For checking answers
+  const [quizMode, setQuizMode] = useState<QuizMode>(QuizMode.Write);
 
-  const handleStartQuiz = (selectedSongs: MusicPiece[]) => {
+  const handleStartQuiz = (selectedSongs: MusicPiece[], mode: QuizMode) => {
     const shuffled = [...selectedSongs].sort(() => Math.random() - 0.5);
 
     setShuffledList(shuffled);
+    setQuizMode(mode);
     setCurrentIndex(0);
     setScore(0);
     setFeedback(null);
@@ -152,6 +154,8 @@ const App: React.FC = () => {
             totalPieces={shuffledList.length}
             youtubeId={currentPiece.youtubeId}
             youtubeStartTime={currentPiece.youtubeStartTime}
+            quizMode={quizMode}
+            allSongs={shuffledList}
             onSubmit={handleSubmitAnswer}
             onGiveUp={handleGiveUp}
             onNext={handleNextQuestion}
