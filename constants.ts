@@ -254,7 +254,7 @@ const rawMusicData: MusicPiece[] = [
     title: 'Sonata No.7',
     youtubeId: 'bQbpzw0MHpc',
     week: 'Week 10-11-12',
-    keyPoint: "'Stalingrad' sonata. Intense, motor-like final movement.",
+    keyPoint: 'New pattern for piano. Intense, motor-like final movement.',
     youtubeStartTime: 0,
   },
   {
