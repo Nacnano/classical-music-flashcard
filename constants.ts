@@ -114,12 +114,12 @@ const rawMusicData: MusicPiece[] = [
     youtubeStartTime: 0,
   },
   {
-    composer: 'Mouret',
-    title: 'Masterpiece Theatre Theme (Rondeau)',
-    youtubeId: 'bpSUtg41p6A',
+    composer: 'Drayton',
+    title: 'Masterpiece',
+    youtubeId: '6bmRE-cTg_Q',
     week: 'Week 3',
-    keyPoint: 'Majestic fanfare. *Masterpiece Theatre* TV theme.',
-    youtubeStartTime: 0,
+    keyPoint: 'Acapella with "Johann Sebastian Bach" vocalises.',
+    youtubeStartTime: 70,
   },
   {
     composer: 'Haydn',
