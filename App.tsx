@@ -52,9 +52,8 @@ const App: React.FC = () => {
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [isLoading, setIsLoading] = useState(false); // For checking answers
 
-  const handleStartQuiz = (selectedWeeks: string[]) => {
-    const filteredList = MUSIC_LIST.filter(piece => selectedWeeks.includes(piece.week));
-    const shuffled = [...filteredList].sort(() => Math.random() - 0.5);
+  const handleStartQuiz = (selectedSongs: MusicPiece[]) => {
+    const shuffled = [...selectedSongs].sort(() => Math.random() - 0.5);
 
     setShuffledList(shuffled);
     setCurrentIndex(0);
