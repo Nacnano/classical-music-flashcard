@@ -65,7 +65,7 @@ const Flashcard: React.FC<FlashcardProps> = ({
             value={composer}
             onChange={e => setComposer(e.target.value)}
             className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition duration-200"
-            placeholder="e.g., Mozart"
+            placeholder={pieceNumber === 1 ? 'e.g., Mozart' : ''}
             required
           />
         </div>
@@ -82,7 +82,7 @@ const Flashcard: React.FC<FlashcardProps> = ({
             value={title}
             onChange={e => setTitle(e.target.value)}
             className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition duration-200"
-            placeholder="e.g., Eine kleine Nachtmusik, I"
+            placeholder={pieceNumber === 1 ? 'e.g., Eine kleine Nachtmusik, I' : ''}
             required
           />
         </div>
