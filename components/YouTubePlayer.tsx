@@ -15,14 +15,16 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({
 }) => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [key, setKey] = useState(0);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     setIsLoading(true);
     setIsVideoVisible(false);
+    setKey(prev => prev + 1); // Force iframe remount
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 500); // Reduced from 2000ms to 500ms
+    }, 1200); // Increased to 1200ms to ensure iframe loads
 
     return () => clearTimeout(timer);
   }, [youtubeId]);
@@ -91,6 +93,7 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({
           {/* Full video player */}
           <div className="w-full aspect-video bg-black rounded-lg overflow-hidden shadow-lg border-2 border-amber-400/50 transition-all duration-300 ease-in-out">
             <iframe
+              key={key}
               ref={iframeRef}
               src={videoSrc}
               title="YouTube video player"
@@ -124,6 +127,7 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({
           {/* Hidden iframe for audio playback */}
           <div className="hidden">
             <iframe
+              key={key}
               ref={iframeRef}
               src={videoSrc}
               title="YouTube audio player"
