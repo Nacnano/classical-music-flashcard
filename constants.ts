@@ -270,7 +270,8 @@ const rawMusicData: MusicPiece[] = [
     title: 'The Map',
     youtubeId: 'Nvjht7Kq-tI',
     week: 'Week 10-11-12',
-    keyPoint: 'Blends Chinese & Western music. Features cello.',
+    keyPoint:
+      'Blends Chinese & Western music. Using ordinary sounds as instruments (blowing leaf, stones, etc.)',
     youtubeStartTime: 0,
   },
 ];
