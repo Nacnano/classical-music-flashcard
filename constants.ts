@@ -1,7 +1,6 @@
 import { MusicPiece } from './types';
 
 const rawMusicData: MusicPiece[] = [
-  // Week 1-2
   {
     composer: 'Beethoven',
     title: 'Symphony No.5, I',
@@ -13,7 +12,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Chopin',
     title: 'Tristesse Etude',
-    youtubeId: '6OFHXmiZP38',
+    youtubeId: 'efUpNxQPLMU',
     week: 'Week 1-2',
     keyPoint: "'Tristesse' = Sadness. Chopin's most beautiful melody.",
     youtubeStartTime: 23,
@@ -21,7 +20,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Puccini',
     title: 'O mio babbino caro (Oh My Dear Papa)',
-    youtubeId: 'PYBm2A1fszw',
+    youtubeId: '0Wlcr2bIKmk',
     week: 'Week 1-2',
     keyPoint: "Soprano aria: 'Oh my dear papa'.",
     youtubeStartTime: 0,
@@ -29,7 +28,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'di Capua',
     title: 'O Sole mio',
-    youtubeId: '7I18_VNjX3g',
+    youtubeId: '12I2TkWJimI',
     week: 'Week 1-2',
     keyPoint: "Famous tenor song: 'My Sunshine'.",
     youtubeStartTime: 0,
@@ -37,7 +36,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'The Beatles',
     title: 'Honey Pie',
-    youtubeId: 'p7McvJcWHjg',
+    youtubeId: 'bY9AqiAXCWM',
     week: 'Week 1-2',
     keyPoint: 'Vaudeville style, sounds like an old 1920s record.',
     youtubeStartTime: 0,
@@ -45,7 +44,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Beethoven',
     title: 'Symphony No.9, IV (Choral Symphony)',
-    youtubeId: 't3217H8JppI',
+    youtubeId: 'oiwxEvCzHKw',
     week: 'Week 1-2',
     keyPoint: "Famous 'Ode to Joy' theme. EU anthem.",
     youtubeStartTime: 780,
@@ -69,7 +68,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Vivaldi',
     title: 'Lute Concerto, I',
-    youtubeId: 'pUYvOlFjXQU',
+    youtubeId: '7hPNBjCSJLo',
     week: 'Week 1-2',
     keyPoint: 'Gentle, plucked sound of the lute (like a guitar).',
     youtubeStartTime: 0,
@@ -82,7 +81,6 @@ const rawMusicData: MusicPiece[] = [
     keyPoint: 'Triumphant finale: a journey from darkness to light.',
     youtubeStartTime: 25,
   },
-  // Week 3
   {
     composer: 'Pachelbel',
     title: 'Canon in D',
@@ -102,7 +100,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Vivaldi',
     title: 'Four Seasons - Winter, I',
-    youtubeId: 'GD3dgiDreGc',
+    youtubeId: 'CLiznLYZPRI',
     week: 'Week 3',
     keyPoint: 'Musically sounds like chattering teeth & stamping feet.',
     youtubeStartTime: 0,
@@ -118,12 +116,11 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Mouret',
     title: 'Masterpiece Theatre Theme (Rondeau)',
-    youtubeId: 'IrCQh1usdzE',
+    youtubeId: 'bpSUtg41p6A',
     week: 'Week 3',
     keyPoint: 'Majestic fanfare. *Masterpiece Theatre* TV theme.',
     youtubeStartTime: 0,
   },
-  // Week 4-5-6
   {
     composer: 'Haydn',
     title: 'Surprise Symphony, II',
@@ -143,12 +140,11 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Dhamabutra',
     title: 'Pledge to HRH',
-    youtubeId: 'yGfvYKVXgVE',
+    youtubeId: 'QZIZbeppLto',
     week: 'Week 4-5-6',
     keyPoint: 'Contemporary Thai composer. Blends Thai & classical styles.',
     youtubeStartTime: 0,
   },
-  // Week 7-8-9
   {
     composer: 'Rossini',
     title: 'William Tell Overture',
@@ -160,7 +156,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Strauss II',
     title: 'Die Fledermaus Overture',
-    youtubeId: 'RdTBml4oOZ8',
+    youtubeId: '-IY4N_8BtHU',
     week: 'Week 7-8-9',
     keyPoint: 'Bubbly and energetic waltzes and polkas.',
     youtubeStartTime: 0,
@@ -208,7 +204,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Puccini',
     title: 'One Fine Day',
-    youtubeId: '0j7nx5oUzUg',
+    youtubeId: '9uqPfArHlmU',
     week: 'Week 7-8-9',
     keyPoint: 'Emotional soprano aria from *Madama Butterfly*.',
     youtubeStartTime: 0,
@@ -224,16 +220,15 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Rachmaninov',
     title: 'Vocalise',
-    youtubeId: 'b7Z8GvqqpYM',
+    youtubeId: 'SVyza9jzw18',
     week: 'Week 7-8-9',
     keyPoint: 'A song without words, sung on a single vowel.',
     youtubeStartTime: 0,
   },
-  // Week 10-11-12
   {
     composer: 'Ives',
     title: 'Charlie Rutlage',
-    youtubeId: 'TyVL0Y4ZbSI',
+    youtubeId: 'kHMRAEAMuyY',
     week: 'Week 10-11-12',
     keyPoint: 'American cowboy story with singing and talking.',
     youtubeStartTime: 0,
@@ -241,7 +236,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Schoenberg',
     title: 'Pierrot lunaire',
-    youtubeId: 'JWlwCRlVh7M',
+    youtubeId: 'gotvlm-DZbk',
     week: 'Week 10-11-12',
     keyPoint: "Eerie 'speech-singing' vocal style (*Sprechstimme*).",
     youtubeStartTime: 0,
@@ -257,7 +252,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Prokofiev',
     title: 'Sonata No.7',
-    youtubeId: 'KOhler0g0jU',
+    youtubeId: 'bQbpzw0MHpc',
     week: 'Week 10-11-12',
     keyPoint: "'Stalingrad' sonata. Intense, motor-like final movement.",
     youtubeStartTime: 0,
@@ -265,7 +260,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Adams',
     title: 'China Gates',
-    youtubeId: 'gFHUWdlEjJo',
+    youtubeId: 'WwJs8M2SoS8',
     week: 'Week 10-11-12',
     keyPoint: 'Minimalist piano. Steady, flowing rhythm with slow changes.',
     youtubeStartTime: 0,
@@ -273,7 +268,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Dun',
     title: 'The Map',
-    youtubeId: 'PXLdXWkr1QY',
+    youtubeId: 'Nvjht7Kq-tI',
     week: 'Week 10-11-12',
     keyPoint: 'Blends Chinese & Western music. Features cello.',
     youtubeStartTime: 0,
