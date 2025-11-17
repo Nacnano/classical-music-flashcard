@@ -230,7 +230,7 @@ const rawMusicData: MusicPiece[] = [
     title: 'Charlie Rutlage',
     youtubeId: 'kHMRAEAMuyY',
     week: 'Week 10-11-12',
-    keyPoint: 'American cowboy story with singing and talking.',
+    keyPoint: 'American cowboy story with chaotic folk singing and talking.',
     youtubeStartTime: 60,
   },
   {
