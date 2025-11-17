@@ -1,0 +1,5 @@
+{
+  "name": "Classical Music Flashcards",
+  "description": "A flashcard-style quiz app to help you learn classical music pieces and their composers. Listen to a simulated piece, guess the title and composer, and get instant feedback powered by Gemini.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,58 @@
+import { MusicPiece } from './types';
+
+const rawMusicData: MusicPiece[] = [
+  // Week 1-2
+  { composer: 'Beethoven', title: 'Symphony No.5, I', youtubeId: 'jv2WJMVPQi8', week: 'Week 1-2', keyPoint: "Fate knocking: short-short-short-long.", youtubeStartTime: 7 },
+  { composer: 'Chopin', title: 'Tristesse Etude', youtubeId: '_6-h_T2wz6A', week: 'Week 1-2', keyPoint: "'Tristesse' = Sadness. Chopin's most beautiful melody.", youtubeStartTime: 23 },
+  { composer: 'Puccini', title: 'O mio babbino caro (Oh My Dear Papa)', youtubeId: 'U_6-Ie23k4I', week: 'Week 1-2', keyPoint: "Soprano aria: 'Oh my dear papa'.", youtubeStartTime: 35 },
+  { composer: 'di Capua', title: 'O Sole mio', youtubeId: 'd_56tD54c_w', week: 'Week 1-2', keyPoint: "Famous tenor song: 'My Sunshine'.", youtubeStartTime: 50 },
+  { composer: 'The Beatles', title: 'Honey Pie', youtubeId: 'n5d7_mjj_v4', week: 'Week 1-2', keyPoint: "Vaudeville style, sounds like an old 1920s record.", youtubeStartTime: 0 },
+  { composer: 'Beethoven', title: 'Symphony No.9, IV (Choral Symphony)', youtubeId: 't3217H8JppI', week: 'Week 1-2', keyPoint: "Famous 'Ode to Joy' theme. EU anthem.", youtubeStartTime: 780 },
+  { composer: 'Mozart', title: 'Eine kleine nachtmusik, I', youtubeId: 'oy2zDJPIgwc', week: 'Week 1-2', keyPoint: "'A Little Night Music'. Cheerful & famous opening.", youtubeStartTime: 0 },
+  { composer: 'Strauss I', title: 'Radetzky March', youtubeId: 'pPlX_yZp2oY', week: 'Week 1-2', keyPoint: "Lively march. Audience claps along.", youtubeStartTime: 0 },
+  { composer: 'Vivaldi', title: 'Lute Concerto, I', youtubeId: 'afhAqMeeQJc', week: 'Week 1-2', keyPoint: "Gentle, plucked sound of the lute (like a guitar).", youtubeStartTime: 15 },
+  { composer: 'Beethoven', title: 'Symphony No.5, IV', youtubeId: '6-t60g2t3c4', week: 'Week 1-2', keyPoint: "Triumphant finale: a journey from darkness to light.", youtubeStartTime: 25 },
+  // Week 3
+  { composer: 'Pachelbel', title: 'Canon in D', youtubeId: 'NlprozGcs80', week: 'Week 3', keyPoint: "Repeating bass line. Popular wedding music.", youtubeStartTime: 55 },
+  { composer: 'Vivaldi', title: 'Four Seasons - Spring, I', youtubeId: '-mZ4_u1sJ-c', week: 'Week 3', keyPoint: "Musically sounds like birds, streams, thunderstorms.", youtubeStartTime: 0 },
+  { composer: 'Vivaldi', title: 'Four Seasons - Winter, I', youtubeId: 'GD3dgiDreGc', week: 'Week 3', keyPoint: "Musically sounds like chattering teeth & stamping feet.", youtubeStartTime: 0 },
+  { composer: 'Bach', title: 'Toccata and Fugue', youtubeId: 'Nnuq9PXbywA', week: 'Week 3', keyPoint: "Dramatic organ music. Used in horror films & *Fantasia*.", youtubeStartTime: 0 },
+  { composer: 'Mouret', title: 'Masterpiece Theatre Theme (Rondeau)', youtubeId: '_0a51h_T9cQ', week: 'Week 3', keyPoint: "Majestic fanfare. *Masterpiece Theatre* TV theme.", youtubeStartTime: 0 },
+  // Week 4-5-6
+  { composer: 'Haydn', title: 'Surprise Symphony, II', youtubeId: 'VOLy6JxEDLw', week: 'Week 4-5-6', keyPoint: "Sudden LOUD chord! Written to wake up the audience.", youtubeStartTime: 29 },
+  { composer: 'Mozart', title: 'The Vengeance of Hell Boils in My Heart', youtubeId: 'C2ODfuMMyss', week: 'Week 4-5-6', keyPoint: "'Queen of the Night' aria. Famously high notes.", youtubeStartTime: 62 },
+  { composer: 'Dhamabutra', title: 'Pledge to HRH', youtubeId: '1F5vI8nI73M', week: 'Week 4-5-6', keyPoint: "Contemporary Thai composer. Blends Thai & classical styles.", youtubeStartTime: 30 },
+  // Week 7-8-9
+  { composer: 'Rossini', title: 'William Tell Overture', youtubeId: 'xoBE69wdSkQ', week: 'Week 7-8-9', keyPoint: "Galloping horses part is *The Lone Ranger* theme.", youtubeStartTime: 442 },
+  { composer: 'Strauss II', title: 'Die Fledermaus Overture', youtubeId: 'CHJDlS7p-yM', week: 'Week 7-8-9', keyPoint: "Bubbly and energetic waltzes and polkas.", youtubeStartTime: 135 },
+  { composer: 'Offenbach', title: 'Can-Can', youtubeId: 'Ekmw-m2de-I', week: 'Week 7-8-9', keyPoint: "Famous high-kicking dance music.", youtubeStartTime: 75 },
+  { composer: 'Saint-Saëns', title: 'The Swan', youtubeId: 'zNb3421qPgo', week: 'Week 7-8-9', keyPoint: "Graceful cello melody. Sounds like a gliding swan.", youtubeStartTime: 11 },
+  { composer: 'Bizet', title: 'Habanera', youtubeId: 'K2snTkaD64U', week: 'Week 7-8-9', keyPoint: "Sultry, dance-like aria from the opera *Carmen*.", youtubeStartTime: 58 },
+  { composer: 'Tchaikovsky', title: 'Piano Concerto No.1, I', youtubeId: 'hN82jg39-n8', week: 'Week 7-8-9', keyPoint: "Powerful, famous piano chords at the start.", youtubeStartTime: 12 },
+  { composer: 'Rimsky-Korsakov', title: 'Flight of the Bumble Bee', youtubeId: '6QV1-V3c2eA', week: 'Week 7-8-9', keyPoint: "Extremely fast. Sounds like a buzzing bee.", youtubeStartTime: 0 },
+  { composer: 'Puccini', title: 'One Fine Day', youtubeId: 'mN9nZp4FnaA', week: 'Week 7-8-9', keyPoint: "Emotional soprano aria from *Madama Butterfly*.", youtubeStartTime: 118 },
+  { composer: 'Fučík', title: 'Entrance of the Gladiators', youtubeId: '4w7m4go2k10', week: 'Week 7-8-9', keyPoint: "The classic circus and clown music.", youtubeStartTime: 0 },
+  { composer: 'Rachmaninov', title: 'Vocalise', youtubeId: 'lCa8-i_jGvM', week: 'Week 7-8-9', keyPoint: "A song without words, sung on a single vowel.", youtubeStartTime: 20 },
+  // Week 10-11-12
+  { composer: 'Ives', title: 'Charlie Rutlage', youtubeId: 'pWzhtS-M1bs', week: 'Week 10-11-12', keyPoint: "American cowboy story with singing and talking.", youtubeStartTime: 0 },
+  { composer: 'Schoenberg', title: 'Pierrot lunaire', youtubeId: 'bH1lAeGUnVA', week: 'Week 10-11-12', keyPoint: "Eerie 'speech-singing' vocal style (*Sprechstimme*).", youtubeStartTime: 22 },
+  { composer: 'Stravinsky', title: 'The Rite of Spring', youtubeId: 'FFPjFjylZYg', week: 'Week 10-11-12', keyPoint: "Caused a riot at its premiere. Primal, harsh rhythms.", youtubeStartTime: 210 },
+  { composer: 'Prokofiev', title: 'Sonata No.7', youtubeId: 'ZkU5Y-S-F2M', week: 'Week 10-11-12', keyPoint: "'Stalingrad' sonata. Intense, motor-like final movement.", youtubeStartTime: 940 },
+  { composer: 'Adams', title: 'China Gates', youtubeId: 'TpcK4g2-Q58', week: 'Week 10-11-12', keyPoint: "Minimalist piano. Steady, flowing rhythm with slow changes.", youtubeStartTime: 0 },
+  { composer: 'Dun', title: 'The Map', youtubeId: '4-ZLj9soG6k', week: 'Week 10-11-12', keyPoint: "Blends Chinese & Western music. Features cello.", youtubeStartTime: 45 },
+];
+
+// Deduplicate the list based on composer and title, keeping the first entry.
+const uniqueKeys = new Set<string>();
+export const MUSIC_LIST: MusicPiece[] = rawMusicData.filter(piece => {
+  const key = `${piece.composer.toLowerCase()}|${piece.title.toLowerCase()}`;
+  if (uniqueKeys.has(key)) {
+    return false;
+  }
+  uniqueKeys.add(key);
+  return true;
+});
+
+// Derive the list of weeks from the final, deduplicated MUSIC_LIST.
+// This ensures the filter screen only shows weeks that have playable songs.
+export const WEEKS = Array.from(new Set(MUSIC_LIST.map(p => p.week))).sort();
