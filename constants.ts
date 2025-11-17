@@ -231,7 +231,7 @@ const rawMusicData: MusicPiece[] = [
     youtubeId: 'kHMRAEAMuyY',
     week: 'Week 10-11-12',
     keyPoint: 'American cowboy story with singing and talking.',
-    youtubeStartTime: 0,
+    youtubeStartTime: 60,
   },
   {
     composer: 'Schoenberg',
