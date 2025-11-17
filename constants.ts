@@ -238,7 +238,7 @@ const rawMusicData: MusicPiece[] = [
     title: 'Pierrot lunaire',
     youtubeId: 'FkF5HY3QLTk',
     week: 'Week 10-11-12',
-    keyPoint: 'Distorted melodys. Uses Sprechstimme (half-singing, half-speaking).',
+    keyPoint: 'Distorted melodies. Uses Sprechstimme (half-singing, half-speaking).',
     youtubeStartTime: 0,
   },
   {
