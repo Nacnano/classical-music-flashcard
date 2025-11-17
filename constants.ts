@@ -151,7 +151,7 @@ const rawMusicData: MusicPiece[] = [
     youtubeId: 'xoBE69wdSkQ',
     week: 'Week 7-8-9',
     keyPoint: 'Galloping horses part is *The Lone Ranger* theme.',
-    youtubeStartTime: 442,
+    youtubeStartTime: 540,
   },
   {
     composer: 'Strauss II',
