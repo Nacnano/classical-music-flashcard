@@ -18,4 +18,6 @@ export interface Feedback {
   isCorrect: boolean;
   correctPiece: MusicPiece;
   feedbackMessage: string;
+  userComposer?: string;
+  userTitle?: string;
 }

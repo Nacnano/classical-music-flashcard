@@ -87,12 +87,16 @@ const App: React.FC = () => {
         isCorrect: true,
         correctPiece: currentPiece,
         feedbackMessage: 'Excellent work!',
+        userComposer: userComposer.trim(),
+        userTitle: userTitle.trim(),
       });
     } else {
       setFeedback({
         isCorrect: false,
         correctPiece: currentPiece,
         feedbackMessage: "That wasn't quite right. The correct answer is shown above. Keep trying!",
+        userComposer: userComposer.trim(),
+        userTitle: userTitle.trim(),
       });
     }
     setGameState(GameState.Feedback);

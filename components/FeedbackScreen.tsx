@@ -52,7 +52,7 @@ const InfoIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const FeedbackScreen: React.FC<FeedbackScreenProps> = ({ feedback, onNext }) => {
-  const { isCorrect, correctPiece, feedbackMessage } = feedback;
+  const { isCorrect, correctPiece, feedbackMessage, userComposer, userTitle } = feedback;
 
   return (
     <div className="w-full text-center bg-slate-800/50 p-8 rounded-xl shadow-2xl animate-fade-in">
@@ -72,7 +72,19 @@ const FeedbackScreen: React.FC<FeedbackScreenProps> = ({ feedback, onNext }) => 
         {isCorrect ? 'Correct!' : 'Not Quite!'}
       </h2>
 
+      {/* User's Answer */}
+      {(userComposer || userTitle) && (
+        <div className="bg-gray-900/50 p-4 rounded-lg border-l-4 border-purple-400 text-left my-6">
+          <h3 className="font-bold text-purple-300 mb-2">Your Answer:</h3>
+          <p className="text-gray-200">
+            {userComposer} - <span className="italic">"{userTitle}"</span>
+          </p>
+        </div>
+      )}
+
+      {/* Correct Answer */}
       <div className="my-6 text-lg">
+        <h3 className="font-bold text-amber-300 mb-2">Correct Answer:</h3>
         <p className="font-semibold text-amber-200 mt-1 text-xl">
           {correctPiece.composer} - <span className="italic">"{correctPiece.title}"</span>
         </p>
