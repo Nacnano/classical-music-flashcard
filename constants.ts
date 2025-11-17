@@ -71,7 +71,7 @@ const rawMusicData: MusicPiece[] = [
     youtubeId: '7hPNBjCSJLo',
     week: 'Week 1-2',
     keyPoint: 'Gentle, plucked sound of the lute (like a guitar).',
-    youtubeStartTime: 0,
+    youtubeStartTime: 25,
   },
   {
     composer: 'Beethoven',
