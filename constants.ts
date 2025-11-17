@@ -126,7 +126,7 @@ const rawMusicData: MusicPiece[] = [
     title: 'Surprise Symphony, II',
     youtubeId: 'VOLy6JxEDLw',
     week: 'Week 4-5-6',
-    keyPoint: 'Soft twinkle and a Sudden LOUD chord! Written to wake up the audience.',
+    keyPoint: 'Soft music and a Sudden LOUD chord! Written to wake up the audience.',
     youtubeStartTime: 35,
   },
   {
@@ -143,7 +143,7 @@ const rawMusicData: MusicPiece[] = [
     youtubeId: 'QZIZbeppLto',
     week: 'Week 4-5-6',
     keyPoint: 'Contemporary Thai composer. Blends Thai & classical styles.',
-    youtubeStartTime: 0,
+    youtubeStartTime: 985,
   },
   {
     composer: 'Rossini',
