@@ -14,7 +14,7 @@ const rawMusicData: MusicPiece[] = [
     title: 'Tristesse Etude',
     youtubeId: 'efUpNxQPLMU',
     week: 'Week 1-2',
-    keyPoint: "'Tristesse' = Sadness. Chopin's most beautiful melody.",
+    keyPoint: "'Tristesse' = Sadness. Both fast and slow dynamics",
     youtubeStartTime: 23,
   },
   {
