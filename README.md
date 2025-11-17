@@ -1,20 +1,39 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Classical Music Flashcards
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/18-KwzWkiAdiXI-_RboHKY6zJcngSFNNi
+A React-based quiz application for learning classical music pieces with YouTube integration.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Bun (v1.0 or higher)
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+   ```bash
+   bun install
+   ```
+
+2. Run the app:
+
+   ```bash
+   bun run dev
+   ```
+
+3. Build for production:
+
+   ```bash
+   bun run build
+   ```
+
+## Features
+
+- 35+ classical music pieces from multiple weeks
+- YouTube video player integration
+- Fuzzy answer matching (tolerates typos)
+- Week-based filtering
+- Progress tracking and scoring
+
+0952507627
+22/10/2568 16:00
+AIS shop, Central Koraj
+AIS869/2568
+Piyanun Pitchpokin

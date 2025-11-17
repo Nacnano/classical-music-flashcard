@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import YouTubePlayer from './YouTubePlayer';
@@ -14,7 +13,15 @@ interface FlashcardProps {
   onPrevious: () => void;
 }
 
-const Flashcard: React.FC<FlashcardProps> = ({ pieceNumber, totalPieces, youtubeId, youtubeStartTime, onSubmit, onNext, onPrevious }) => {
+const Flashcard: React.FC<FlashcardProps> = ({
+  pieceNumber,
+  totalPieces,
+  youtubeId,
+  youtubeStartTime,
+  onSubmit,
+  onNext,
+  onPrevious,
+}) => {
   const [composer, setComposer] = useState('');
   const [title, setTitle] = useState('');
 
@@ -42,24 +49,28 @@ const Flashcard: React.FC<FlashcardProps> = ({ pieceNumber, totalPieces, youtube
       </div>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="composer" className="block text-sm font-medium text-gray-300 mb-2">Composer</label>
+          <label htmlFor="composer" className="block text-sm font-medium text-gray-300 mb-2">
+            Composer
+          </label>
           <input
             id="composer"
             type="text"
             value={composer}
-            onChange={(e) => setComposer(e.target.value)}
+            onChange={e => setComposer(e.target.value)}
             className="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition duration-200"
             placeholder="e.g., Mozart"
             required
           />
         </div>
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-gray-300 mb-2">Title</label>
+          <label htmlFor="title" className="block text-sm font-medium text-gray-300 mb-2">
+            Title
+          </label>
           <input
             id="title"
             type="text"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={e => setTitle(e.target.value)}
             className="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition duration-200"
             placeholder="e.g., Eine kleine Nachtmusik, I"
             required
@@ -75,12 +86,10 @@ const Flashcard: React.FC<FlashcardProps> = ({ pieceNumber, totalPieces, youtube
           >
             Previous
           </Button>
-          <Button type="submit" className="flex-grow">Check Answer</Button>
-          <Button
-            type="button"
-            variant="secondary"
-            onClick={onNext}
-          >
+          <Button type="submit" className="flex-grow">
+            Check Answer
+          </Button>
+          <Button type="button" variant="secondary" onClick={onNext}>
             Next
           </Button>
         </div>

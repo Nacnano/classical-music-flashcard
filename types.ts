@@ -1,4 +1,3 @@
-
 export interface MusicPiece {
   composer: string;
   title: string;

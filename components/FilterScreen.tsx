@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Button from './Button';
 import { WEEKS } from '../constants';
@@ -12,9 +11,7 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
 
   const handleToggleWeek = (week: string) => {
     setSelectedWeeks(prev =>
-      prev.includes(week)
-        ? prev.filter(w => w !== week)
-        : [...prev, week]
+      prev.includes(week) ? prev.filter(w => w !== week) : [...prev, week]
     );
   };
 
@@ -32,11 +29,14 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
     <div className="w-full max-w-lg bg-slate-800/50 p-8 rounded-xl shadow-2xl animate-fade-in text-center">
       <h2 className="text-3xl font-bold mb-4 text-amber-200">Select Weeks to Study</h2>
       <p className="text-gray-400 mb-6">Choose the weeks you want to be quizzed on.</p>
-      
+
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-left my-6">
           {WEEKS.map(week => (
-            <label key={week} className="flex items-center space-x-3 p-3 bg-gray-900/50 rounded-lg cursor-pointer hover:bg-gray-800 transition-colors">
+            <label
+              key={week}
+              className="flex items-center space-x-3 p-3 bg-gray-900/50 rounded-lg cursor-pointer hover:bg-gray-800 transition-colors"
+            >
               <input
                 type="checkbox"
                 checked={selectedWeeks.includes(week)}
@@ -47,12 +47,16 @@ const FilterScreen: React.FC<FilterScreenProps> = ({ onStartQuiz }) => {
             </label>
           ))}
         </div>
-        
+
         <div className="flex justify-center gap-4 my-6">
-          <Button type="button" variant="secondary" onClick={handleSelectAll}>Select All</Button>
-          <Button type="button" variant="secondary" onClick={handleDeselectAll}>Deselect All</Button>
+          <Button type="button" variant="secondary" onClick={handleSelectAll}>
+            Select All
+          </Button>
+          <Button type="button" variant="secondary" onClick={handleDeselectAll}>
+            Deselect All
+          </Button>
         </div>
-        
+
         <Button
           type="submit"
           disabled={selectedWeeks.length === 0}

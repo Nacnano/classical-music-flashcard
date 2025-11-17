@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { MusicPiece, GameState, Feedback } from './types';
 import { MUSIC_LIST } from './constants';
@@ -19,8 +18,9 @@ import FilterScreen from './components/FilterScreen';
 const levenshteinDistance = (s1: string, s2: string): number => {
   const str1 = s1.toLowerCase();
   const str2 = s2.toLowerCase();
-  const track = Array(str2.length + 1).fill(null).map(() =>
-    Array(str1.length + 1).fill(null));
+  const track = Array(str2.length + 1)
+    .fill(null)
+    .map(() => Array(str1.length + 1).fill(null));
 
   for (let i = 0; i <= str1.length; i += 1) {
     track[0][i] = i;
@@ -35,13 +35,12 @@ const levenshteinDistance = (s1: string, s2: string): number => {
       track[j][i] = Math.min(
         track[j][i - 1] + 1, // deletion
         track[j - 1][i] + 1, // insertion
-        track[j - 1][i - 1] + indicator, // substitution
+        track[j - 1][i - 1] + indicator // substitution
       );
     }
   }
   return track[str2.length][str1.length];
 };
-
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.Start);
@@ -54,7 +53,7 @@ const App: React.FC = () => {
   const handleStartQuiz = (selectedWeeks: string[]) => {
     const filteredList = MUSIC_LIST.filter(piece => selectedWeeks.includes(piece.week));
     const shuffled = [...filteredList].sort(() => Math.random() - 0.5);
-    
+
     setShuffledList(shuffled);
     setCurrentIndex(0);
     setScore(0);
@@ -69,13 +68,13 @@ const App: React.FC = () => {
   const handleSubmitAnswer = (userComposer: string, userTitle: string) => {
     setIsLoading(true);
     const currentPiece = shuffledList[currentIndex];
-    
+
     const composerDistance = levenshteinDistance(userComposer.trim(), currentPiece.composer);
     const titleDistance = levenshteinDistance(userTitle.trim(), currentPiece.title);
 
     // Thresholds for correctness: allows for minor typos.
     const COMPOSER_THRESHOLD = 2; // e.g., "Beethovan" instead of "Beethoven" is ok.
-    const TITLE_THRESHOLD = 3;    // Allows for a few typos in the title.
+    const TITLE_THRESHOLD = 3; // Allows for a few typos in the title.
 
     const isComposerCorrect = composerDistance <= COMPOSER_THRESHOLD;
     const isTitleCorrect = titleDistance <= TITLE_THRESHOLD;
@@ -111,22 +110,21 @@ const App: React.FC = () => {
   const handlePreviousQuestion = () => {
     setFeedback(null);
     if (currentIndex > 0) {
-        setCurrentIndex(prev => prev - 1);
-        setGameState(GameState.Playing);
+      setCurrentIndex(prev => prev - 1);
+      setGameState(GameState.Playing);
     }
   };
-
 
   const renderContent = () => {
     if (isLoading) {
       return <Loader message="Checking your answer..." />;
     }
-    
+
     switch (gameState) {
       case GameState.Start:
         return <FilterScreen onStartQuiz={handleStartQuiz} />;
       case GameState.Playing:
-        if (shuffledList.length === 0) return <Loader message="Preparing quiz..."/>; 
+        if (shuffledList.length === 0) return <Loader message="Preparing quiz..." />;
         const currentPiece = shuffledList[currentIndex];
         return (
           <Flashcard

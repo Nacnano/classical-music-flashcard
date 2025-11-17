@@ -6,7 +6,11 @@ interface YouTubePlayerProps {
   youtubeStartTime?: number;
 }
 
-const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ youtubeId, className, youtubeStartTime }) => {
+const YouTubePlayer: React.FC<YouTubePlayerProps> = ({
+  youtubeId,
+  className,
+  youtubeStartTime,
+}) => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   // Set controls=1 to enable the progress bar (scrollbar) and other controls.
@@ -24,7 +28,9 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ youtubeId, className, you
     <div className={`w-full ${className}`}>
       {/* Container for the iframe, its height will change */}
       <div
-        className={`w-full bg-black rounded-lg overflow-hidden shadow-lg border-2 border-amber-400/50 transition-all duration-300 ease-in-out ${isVideoVisible ? 'aspect-video' : 'h-20'}`}
+        className={`w-full bg-black rounded-lg overflow-hidden shadow-lg border-2 border-amber-400/50 transition-all duration-300 ease-in-out ${
+          isVideoVisible ? 'aspect-video' : 'h-20'
+        }`}
       >
         <iframe
           src={videoSrc}
