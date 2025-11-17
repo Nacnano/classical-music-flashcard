@@ -47,7 +47,7 @@ const rawMusicData: MusicPiece[] = [
     youtubeId: 'oiwxEvCzHKw',
     week: 'Week 1-2',
     keyPoint: "Famous 'Ode to Joy' theme. EU anthem.",
-    youtubeStartTime: 780,
+    youtubeStartTime: 3380,
   },
   {
     composer: 'Mozart',
