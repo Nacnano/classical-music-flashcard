@@ -127,7 +127,7 @@ const rawMusicData: MusicPiece[] = [
     youtubeId: 'VOLy6JxEDLw',
     week: 'Week 4-5-6',
     keyPoint: 'Soft twinkle and a Sudden LOUD chord! Written to wake up the audience.',
-    youtubeStartTime: 29,
+    youtubeStartTime: 35,
   },
   {
     composer: 'Mozart',
