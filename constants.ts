@@ -268,11 +268,11 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Dun',
     title: 'The Map',
-    youtubeId: 'Nvjht7Kq-tI',
+    youtubeId: 'RAc1ecb-TqI',
     week: 'Week 10-11-12',
     keyPoint:
       'Blends Chinese & Western music. Using ordinary sounds as instruments (blowing leaf, stones, etc.)',
-    youtubeStartTime: 0,
+    youtubeStartTime: 80,
   },
 ];
 
