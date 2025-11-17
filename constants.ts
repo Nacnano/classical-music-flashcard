@@ -126,7 +126,7 @@ const rawMusicData: MusicPiece[] = [
     title: 'Surprise Symphony, II',
     youtubeId: 'VOLy6JxEDLw',
     week: 'Week 4-5-6',
-    keyPoint: 'Sudden LOUD chord! Written to wake up the audience.',
+    keyPoint: 'Soft twinkle and a Sudden LOUD chord! Written to wake up the audience.',
     youtubeStartTime: 29,
   },
   {
@@ -190,7 +190,7 @@ const rawMusicData: MusicPiece[] = [
     title: 'Piano Concerto No.1, I',
     youtubeId: 'BWerj8FcprM',
     week: 'Week 7-8-9',
-    keyPoint: 'Powerful, famous piano chords at the start.',
+    keyPoint: 'Both Stiff + Clean sound. Powerful, famous piano chords at the start.',
     youtubeStartTime: 12,
   },
   {
