@@ -68,7 +68,9 @@ const FeedbackScreen: React.FC<FeedbackScreenProps> = ({ feedback, onNext }) => 
         )}
       </div>
 
-      <h2 className={`text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 ${isCorrect ? 'text-green-400' : 'text-red-400'}`}>
+      <h2
+        className={`text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 ${isCorrect ? 'text-green-400' : 'text-red-400'}`}
+      >
         {isCorrect ? 'Correct!' : 'Not Quite!'}
       </h2>
 
@@ -102,7 +104,9 @@ const FeedbackScreen: React.FC<FeedbackScreenProps> = ({ feedback, onNext }) => 
             <InfoIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-2 shrink-0" />
             Key Point to Remember
           </h3>
-          <p className="text-gray-300 italic text-xs sm:text-sm md:text-base">{correctPiece.keyPoint}</p>
+          <p className="text-gray-300 italic text-xs sm:text-sm md:text-base">
+            {correctPiece.keyPoint}
+          </p>
         </div>
       )}
 
@@ -110,7 +114,9 @@ const FeedbackScreen: React.FC<FeedbackScreenProps> = ({ feedback, onNext }) => 
         <p className="text-gray-300 italic text-xs sm:text-sm md:text-base">{feedbackMessage}</p>
       </div>
 
-      <Button onClick={onNext} className="w-full sm:w-auto text-sm sm:text-base">Next Piece</Button>
+      <Button onClick={onNext} className="w-full sm:w-auto text-sm sm:text-base">
+        Next Piece
+      </Button>
     </div>
   );
 };
