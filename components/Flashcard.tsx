@@ -11,6 +11,7 @@ interface FlashcardProps {
   youtubeId: string;
   youtubeStartTime?: number;
   onSubmit: (composer: string, title: string) => void;
+  onGiveUp: () => void;
   onNext: () => void;
   onPrevious: () => void;
 }
@@ -21,6 +22,7 @@ const Flashcard: React.FC<FlashcardProps> = ({
   youtubeId,
   youtubeStartTime,
   onSubmit,
+  onGiveUp,
   onNext,
   onPrevious,
 }) => {
@@ -78,22 +80,33 @@ const Flashcard: React.FC<FlashcardProps> = ({
             required
           />
         </div>
-        <div className="pt-4 flex justify-between items-center gap-4">
-          <Button
-            type="button"
-            variant="secondary"
-            onClick={onPrevious}
-            disabled={pieceNumber === 1}
-            className="disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Previous
-          </Button>
-          <Button type="submit" className="flex-grow">
-            Check Answer
-          </Button>
-          <Button type="button" variant="secondary" onClick={onNext}>
-            Next
-          </Button>
+        <div className="pt-4 space-y-3">
+          <div className="flex justify-center">
+            <Button
+              type="button"
+              onClick={onGiveUp}
+              className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2"
+            >
+              Give Up
+            </Button>
+          </div>
+          <div className="flex justify-between items-center gap-4">
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={onPrevious}
+              disabled={pieceNumber === 1}
+              className="disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Previous
+            </Button>
+            <Button type="submit" className="flex-grow">
+              Check Answer
+            </Button>
+            <Button type="button" variant="secondary" onClick={onNext}>
+              Next
+            </Button>
+          </div>
         </div>
       </form>
     </div>

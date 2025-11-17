@@ -103,6 +103,21 @@ const App: React.FC = () => {
     setTimeout(() => setIsLoading(false), 300); // Simulate processing time
   };
 
+  const handleGiveUp = () => {
+    setIsLoading(true);
+    const currentPiece = shuffledList[currentIndex];
+
+    setFeedback({
+      isCorrect: false,
+      correctPiece: currentPiece,
+      feedbackMessage: "Don't worry! Here's the correct answer. Keep practicing!",
+      userComposer: undefined,
+      userTitle: undefined,
+    });
+    setGameState(GameState.Feedback);
+    setTimeout(() => setIsLoading(false), 300);
+  };
+
   const handleNextQuestion = () => {
     setFeedback(null);
     if (currentIndex < shuffledList.length - 1) {
@@ -139,6 +154,7 @@ const App: React.FC = () => {
             youtubeId={currentPiece.youtubeId}
             youtubeStartTime={currentPiece.youtubeStartTime}
             onSubmit={handleSubmitAnswer}
+            onGiveUp={handleGiveUp}
             onNext={handleNextQuestion}
             onPrevious={handlePreviousQuestion}
           />
