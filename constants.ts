@@ -220,7 +220,7 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Rachmaninov',
     title: 'Vocalise',
-    youtubeId: 'SVyza9jzw18',
+    youtubeId: 'OhQaeDWlZ4A',
     week: 'Week 7-8-9',
     keyPoint: 'A song without words, sung on a single vowel.',
     youtubeStartTime: 0,
