@@ -60,10 +60,10 @@ const rawMusicData: MusicPiece[] = [
   {
     composer: 'Strauss I',
     title: 'Radetzky March',
-    youtubeId: 'eab_eFtTKFs',
+    youtubeId: '8_2oDRiLYlc',
     week: 'Week 1-2',
     keyPoint: 'Lively march. Audience claps along.',
-    youtubeStartTime: 0,
+    youtubeStartTime: 146,
   },
   {
     composer: 'Vivaldi',
